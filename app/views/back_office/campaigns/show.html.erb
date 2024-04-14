@@ -12,14 +12,8 @@
       <p class="p-3 border mt-1 text-sm text-gray-500 rounded"><%= @campaign.message %></p>
     </div>
   </div>
-  <div>
-    <div class="-mt-px flex divide-x divide-gray-200">
-      <div class="flex justify-center w-0 flex-1">
-        <%= button_to "Destroy this campaign", campaign_path(@campaign), method: :delete, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-red-400 text-white" %>
-      </div>
-      <div class="flex justify-center w-0 flex-1">
-        <%= link_to "Back to campaigns", campaigns_path, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-indigo-500 text-white" %>
-      </div>
-    </div>
-  </div>
 </div>
+<div class="flex">
+  <%= link_to "Back to campaigns", campaigns_path, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-indigo-500 text-white" %>
+</div>
+<%# button_to "Destroy this campaign", campaign_path(@campaign), method: :delete, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-red-400 text-white" %>

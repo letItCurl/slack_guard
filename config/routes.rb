@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 
   scope module: :back_office do
-    resources :campaigns, only: [ :new, :create, :show, :index, :destroy ]
+    resources :campaigns, only: [ :new, :create, :show, :index ]
     resources :feedbacks, only: [ :new, :create ]
     resource :user, only: [ :update ]
   end

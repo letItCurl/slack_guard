@@ -1,5 +1,72 @@
-<div>
-  <h1 class="font-bold text-4xl">Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
-  <%= link_to 'create account', new_user_session_path, class: "text-indigo-800" %>
+<div class="flex flex-col items-center mx-auto max-w-4xl text-center mb-12">
+  <div class="space-y-8 items-center flex flex-col">
+    <h1 class="font-bold text-5xl">Fill your google forms <span class="italic underline">FAST</span> in your company using <span class="flex justify-center items-center"> <%= image_tag 'slack_logo', class: "w-8 h-8 mr-4" %> Slack DMs</span></h1>
+    <p class="text-green-500 font-bold tracking-wide	">Don't wait to be ignored, get feedback (Fast)</p>
+    <p class="text-gray-300 text-lg">DM your google forms to many coworkers in <span class="italic underline">just one click</span> and fill your form in 90 minutes, not weeks.</p>
+    <%= link_to new_user_session_path, class: "bg-yellow-400 text-yellow-800 rounded-full px-5 py-2 text-lg font-semibold flex items-center space-x-3" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" style="" width="1.3em" height="1.3em" viewBox="0 0 16 16" data-v-bd832875=""><path fill="currentColor" fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8" clip-rule="evenodd"></path></svg>
+      <p>Send your first campaign</p>
+    <% end %>
+  </div>
+  <div class="border-dashed border-gray-500 border-4 rounded-xl p-5 my-24 text-left space-y-4">
+    <h1 class="text-xl">When asking for company-wide feedback by sending forms through emails, you usually have to expect weeks and response rates less 30%.</h1>
+    <h1 class="text-xl">You could follow up with all your coworkers by DM, but it could take you hours. Imagine if you could automate that...</h1>
+    <h1 class="font-bold text-xl">By using DMs, you get response rates over 60% in less than 90 minutes...</h1>
+  </div>
+  <div class="text-left">
+    <h2 class="text-3xl font-bold leading-2">The first Slack Campaign tool that sends DMs on your behalf</h2>
+    <div class="flex max-w-[750px] mx-auto flex-col gap-12 text-lg md:flex-row my-12">
+      <div class="flex-1 rounded-lg bg-[#2B2326] p-6 text-red-200">
+        <p class="mb-3 text-xl font-semibold text-rose-500">😔 Without Slack Command</p>
+        <ul class="space-y-4">
+          <li>1️⃣ People never reply to your forms</li>
+          <li>2️⃣ Company-wide follow-ups can make you seem unimportant</li>
+          <li>3️⃣ Need to wait a week for poor feedback</li>
+          <li>4️⃣ Few co-workers actually respond</li>
+        </ul>
+      </div>
+      <div class="flex-1 rounded-lg bg-[#26322D] p-6 text-green-200">
+        <p class="mb-3 text-xl font-semibold text-green-500">😎 With Slack Command</p>
+        <ul class="space-y-4">
+          <li>1️⃣ Get feedback FAST (90 minutes tops)</li>
+          <li>2️⃣ Build relationships quick</li>
+          <li>3️⃣ Show your leaders how quickly and well you can gather data</li>
+          <li>4️⃣ Stop getting ignored at work</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= link_to new_user_session_path, class: "bg-yellow-400 text-yellow-800 rounded-full px-5 py-2 text-lg font-semibold flex items-center space-x-3" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" style="" width="1.3em" height="1.3em" viewBox="0 0 16 16" data-v-bd832875=""><path fill="currentColor" fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8" clip-rule="evenodd"></path></svg>
+    <p>Send your first campaign</p>
+  <% end %>
+  <div class="text-left pt-12">
+    <h2 class="text-3xl text-center font-bold leading-2 mb-12">Use cases:</h2>
+    <div class="flex max-w-[600px] flex-col gap-3">
+      <div class="rounded-md bg-zinc-800 p-6">
+        <div class="text-lg font-semibold text-zinc-100">1. Sending end-of-quarter feedback forms</div>
+        <div class="text-zinc-400">Get replies when sending feedback forms to your team.</div>
+      </div>
+      <div class="rounded-md bg-zinc-800 p-6">
+        <div class="text-lg font-semibold text-zinc-100">2. Event feedback from participants</div>
+        <div class="text-zinc-400">Get feedback fast from your events to improve for the next one.</div>
+      </div>
+      <div class="rounded-md bg-zinc-800 p-6">
+        <div class="text-lg font-semibold text-zinc-100">3. Track what you send and to whom you send forms</div>
+        <div class="text-zinc-400">Keep your previous messages and emails list saved to create new targeted slack channels.</div>
+      </div>
+      <div class="rounded-md bg-zinc-800 p-6">
+        <div class="text-lg font-semibold text-zinc-100">4. Ask people to book a networking meeting</div>
+        <div class="text-zinc-400">Book one-on-one, launch, or just a coffee with your peers by using DMs instead of imposing a slot.</div>
+      </div>
+    </div>
+  </div>
+  <%= link_to new_user_session_path, class: "mt-12 bg-yellow-400 text-yellow-800 rounded-full px-5 py-2 text-lg font-semibold flex items-center space-x-3" do %>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon" style="" width="1.3em" height="1.3em" viewBox="0 0 16 16" data-v-bd832875=""><path fill="currentColor" fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8" clip-rule="evenodd"></path></svg>
+    <p>Send your first campaign</p>
+  <% end %>
+  <div class="mt-12 w-[300px] sm:w-[700px] rounded-xl shadow-md overflow-clip" style="position: relative; padding-bottom: 56.25%; height: 0;">
+    <iframe src="https://www.loom.com/embed/9b26f21722a34e609cc4157f63d0cfd0?sid=31e3c341-7f39-4fb0-8d81-14a45608717b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <div class="inset-0 bg-gray-400 animate-ping"></div>
+  </div>
 </div>

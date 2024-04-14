@@ -13,13 +13,16 @@
     <hr>
     <% if current_user.slack_token.blank? %>
       <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3 mb-12">
-        You need to update your slack token to start sending campaings. <br>
+        You need to update your slack token. <br>
         Watch the video below 👇
       </div>
       <div class="grid-cols-4 grid gap-4">
-        <div class="col-span-2 rounded-xl shadow-md overflow-clip my-auto" style="position: relative; padding-bottom: 56.25%; height: 0;">
-          <iframe src="https://www.loom.com/embed/8a3e42998a7d4acda9c3562c2fbe012a?sid=675a5533-4998-4efa-9d3b-8e7db7fe3a9a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-          <div class="absolute inset-0 bg-gray-400 animate-ping -z-10"></div>
+        <div class="col-span-2">
+          <div class="mb-3 rounded-xl shadow-md overflow-clip my-auto" style="position: relative; padding-bottom: 56.25%; height: 0;">
+            <iframe src="https://www.loom.com/embed/febc767d69f14cdf94ef12cd036cffed?sid=e5e02bc9-ee8e-4312-9ea5-5f505241cf5e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            <div class="absolute inset-0 bg-gray-400 animate-ping -z-10"></div>
+          </div>
+          <%= link_to 'Click here to create your Slack App', 'https://api.slack.com/apps', class: "underline text-indigo-600" %>
         </div>
         <div class="col-span-2 rounded-xl shadow-md overflow-clip">
           <%= image_tag 'user_token_scopes.png' %>
