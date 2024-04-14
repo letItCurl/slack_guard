@@ -2,6 +2,7 @@ class Campaigns::SendJob
   include Sidekiq::Job
 
   def perform(*args)
+    begin
     @campaign = Campaign.find(args[0])
     @user = @campaign.user
 
@@ -38,6 +39,12 @@ class Campaigns::SendJob
       if send_chat_response["ok"] == false
         next
       end
+    end
+
+    @campaign.done!
+
+    rescue => _
+      @campaign.failed!
     end
   end
 end

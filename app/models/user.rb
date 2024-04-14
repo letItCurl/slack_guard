@@ -7,4 +7,5 @@ class User < ApplicationRecord
   encrypts :slack_token
 
   has_many :campaigns
+  has_many :feedbacks
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_14_032038) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_14_072507) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -31,6 +31,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_032038) do
     t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
+  create_table "feedbacks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -45,4 +53,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_14_032038) do
   end
 
   add_foreign_key "campaigns", "users"
+  add_foreign_key "feedbacks", "users"
 end

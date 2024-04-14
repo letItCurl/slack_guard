@@ -5,8 +5,9 @@
         <h1 class="text-base font-semibold leading-6 text-gray-900">Current slack token<%= ": #{current_user.slack_token.truncate(10)}" if current_user.slack_token.present? %></h1>
         <%= f.text_field :slack_token, class: "py-1 rounded border-gray-300 mt-3" %>
       </div>
-      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none self-end">
+      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none self-end flex space-x-3">
         <%= f.submit "Update", class: "rounded-lg py-2 px-4 bg-indigo-500 text-white block font-medium cursor-pointer" %>
+        <%= link_to "Give us your feedback here 💬", new_feedback_path, class: "rounded-lg py-2 px-4 border-2 border-green-500 text-green-500 block font-medium cursor-pointer" %>
       </div>
     <% end %>
     <hr>

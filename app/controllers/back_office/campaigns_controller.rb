@@ -3,7 +3,7 @@ class BackOffice::CampaignsController < BackOfficeController
 
   # GET /campaigns or /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = current_user.campaigns.all
   end
 
   # GET /campaigns/1 or /campaigns/1.json
