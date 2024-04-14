@@ -21,7 +21,7 @@ class BackOffice::CampaignsController < BackOfficeController
 
   # POST /campaigns or /campaigns.json
   def create
-    @campaign = Campaign.new(campaign_params)
+    @campaign = current_user.campaigns.new(campaign_params)
 
     respond_to do |format|
       if @campaign.save

@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   encrypts :slack_token
+
+  has_many :campaigns
 end
