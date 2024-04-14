@@ -1,0 +1,62 @@
+<div class="w-full">
+  <div class="px-4 sm:px-6 lg:px-8 space-y-6">
+    <%= form_with url: user_path, method: :patch, class: "sm:flex sm:items-center" do |f| %>
+      <div class="sm:flex-auto">
+        <h1 class="text-base font-semibold leading-6 text-gray-900">Current slack token<%= ": #{current_user.slack_token.truncate(10)}" if current_user.slack_token.present? %></h1>
+        <%= f.text_field :slack_token, class: "py-1 rounded border-gray-300 mt-3" %>
+      </div>
+      <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none self-end">
+        <%= f.submit "Update", class: "rounded-lg py-2 px-4 bg-indigo-500 text-white block font-medium cursor-pointer" %>
+      </div>
+    <% end %>
+    <hr>
+    <% if current_user.slack_token.blank? %>
+      <div class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3 mb-12">
+        You need to update your slack token to start sending campaings. <br>
+        Watch the video below 👇
+      </div>
+      <div class="grid-cols-4 grid gap-4">
+        <div class="col-span-2 rounded-xl shadow-md overflow-clip my-auto" style="position: relative; padding-bottom: 56.25%; height: 0;">
+          <iframe src="https://www.loom.com/embed/8a3e42998a7d4acda9c3562c2fbe012a?sid=675a5533-4998-4efa-9d3b-8e7db7fe3a9a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          <div class="absolute inset-0 bg-gray-400 animate-ping -z-10"></div>
+        </div>
+        <div class="col-span-2 rounded-xl shadow-md overflow-clip">
+          <%= image_tag 'user_token_scopes.png' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="sm:flex sm:items-center">
+        <div class="sm:flex-auto">
+          <h1 class="text-base font-semibold leading-6 text-gray-900">Campaigns</h1>
+          <p class="mt-2 text-sm text-gray-700">A list of all the campaigns in your account.</p>
+        </div>
+        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+          <%= link_to "New campaign", new_campaign_path, class: "rounded-lg py-2 px-4 bg-indigo-500 text-white block font-medium" %>
+        </div>
+      </div>
+      <div class="mt-8 flow-root">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+            <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+              <table class="min-w-full divide-y divide-gray-300">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Email count</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
+                    <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white" id="campaigns">
+                  <%= render @campaigns %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

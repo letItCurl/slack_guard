@@ -1,0 +1,25 @@
+<div class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
+  <div class="flex w-full items-center justify-between space-x-6 p-6">
+    <div class="flex-1 space-y-3">
+      <div class="flex items-center space-x-3">
+        <h3 class="truncate font-medium text-gray-900"><%= @campaign.name %></h3>
+        <span class="inline-flex flex-shrink-0 items-center rounded-full bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-600/20"><%= @campaign.status %></span>
+      </div>
+      <p class="text-sm">Emails:</p>
+      <p class="mt-1 text-sm text-gray-500"><%= @campaign.emails %></p>
+      <hr>
+      <p class="text-sm">Message:</p>
+      <p class="p-3 border mt-1 text-sm text-gray-500 rounded"><%= @campaign.message %></p>
+    </div>
+  </div>
+  <div>
+    <div class="-mt-px flex divide-x divide-gray-200">
+      <div class="flex justify-center w-0 flex-1">
+        <%= button_to "Destroy this campaign", campaign_path(@campaign), method: :delete, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-red-400 text-white" %>
+      </div>
+      <div class="flex justify-center w-0 flex-1">
+        <%= link_to "Back to campaigns", campaigns_path, class: "my-3 rounded font-semibold py-2 px-4 text-sm bg-indigo-500 text-white" %>
+      </div>
+    </div>
+  </div>
+</div>
