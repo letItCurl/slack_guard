@@ -110,3 +110,5 @@ accessories:
     directories:
       - data:/var/lib/postgresql/data
     # cmd: postgres -c 'config_file=/etc/postgresql/postgresql.conf' #exit
+
+docker run --name slack-dm-tool-db --detach --restart unless-stopped --network kamal --log-opt max-size="10m" --publish 127.0.0.1:5432:5432 --env POSTGRES_USER="slack-dm-tool-production" --env POSTGRES_PASSWORD="this_is_a_test" --env-file .kamal/apps/slack-dm-tool/env/accessories/db.env --volume $PWD/slack-dm-tool-db/docker-entrypoint-initdb.d/setup.sql:/docker-entrypoint-initdb.d/setup.sql --volume $PWD/slack-dm-tool-db/data:/var/lib/postgresql/data --label service="slack-dm-tool-db" postgres:bookworm
