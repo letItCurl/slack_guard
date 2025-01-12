@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
 
-  if Rails.env.development?
-    mount MissionControl::Jobs::Engine, at: "/jobs"
-  end
+  # if Rails.env.development?
+  #   mount MissionControl::Jobs::Engine, at: "/jobs"
+  # end
 end
