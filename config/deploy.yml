@@ -99,8 +99,8 @@ accessories:
     port: "127.0.0.1:5432:5432"
     env:
       clear:
-        POSTGRES_USER: slack-dm-tool-production
-        POSTGRES_PASSWORD: this_is_a_test
+        POSTGRES_USER: $POSTGRES_USER
+        POSTGRES_PASSWORD: $POSTGRES_PASSWORD
       secret:
         - POSTGRES_PASSWORD
         - POSTGRES_USER
