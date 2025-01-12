@@ -99,9 +99,6 @@ accessories:
     # Change to 3306 to expose port to the world instead of just local network.
     port: "127.0.0.1:5432:5432"
     env:
-      clear:
-        POSTGRES_USER: "${POSTGRES_USER}"
-        POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       secret:
         - POSTGRES_PASSWORD
         - POSTGRES_USER
