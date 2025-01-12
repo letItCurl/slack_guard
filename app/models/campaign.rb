@@ -1,6 +1,6 @@
 class Campaign < ApplicationRecord
   MAX_EMAILS_NUMBER = 50
-  MAX_FREE_CREDITS = 3
+  MAX_FREE_CREDITS = 15
   belongs_to :user
 
   validates :name, presence: true
@@ -18,7 +18,7 @@ class Campaign < ApplicationRecord
   private
 
   def send_campaign
-    Campaigns::SendJob.perform_async(self.id)
+    Campaigns::SendJob.perform_later(self.id)
   end
 
   def max_emails

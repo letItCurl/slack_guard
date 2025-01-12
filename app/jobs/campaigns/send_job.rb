@@ -1,6 +1,4 @@
-class Campaigns::SendJob
-  include Sidekiq::Job
-
+class Campaigns::SendJob < ApplicationJob
   def perform(*args)
     begin
     @campaign = Campaign.find(args[0])
@@ -15,6 +13,8 @@ class Campaigns::SendJob
     end
 
     @campaign.emails_list.each do |email|
+      puts "email ----"
+      puts email
       # @TODO: Manage error
       if email.match(URI::MailTo::EMAIL_REGEXP).nil?
         next
@@ -30,7 +30,6 @@ class Campaigns::SendJob
       end
 
       slack_user_id = get_slack_user_id_response.body.dig("user", "id")
-
       send_chat_response = conn.post('/api/chat.postMessage') do |req|
         req.body = { channel: slack_user_id, text: @campaign.message }
       end

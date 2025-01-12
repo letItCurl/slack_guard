@@ -30,7 +30,7 @@ gem "tailwindcss-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", ">= 4.0.1"
+# gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -50,7 +50,7 @@ gem "bootsnap", require: false
 gem "devise", "~> 4.9", ">= 4.9.4"
 
 # Simple, efficient background processing for Ruby.
-gem "sidekiq", "~> 7.2"
+# gem "sidekiq", "~> 7.2"
 
 gem "faraday", "~> 2.7", ">= 2.7.11"
 
@@ -75,3 +75,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'solid_queue', '~> 1.1', '>= 1.1.2'
+gem 'mission_control-jobs', '~> 1.0', '>= 1.0.1'

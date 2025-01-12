@@ -25,4 +25,8 @@ Rails.application.routes.draw do
       root to: "home#index", as: :unauthenticated_root
     end
   end
+
+  if Rails.env.development?
+    mount MissionControl::Jobs::Engine, at: "/jobs"
+  end
 end

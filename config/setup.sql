@@ -1,0 +1,2 @@
+CREATE DATABASE slack_guard_production;
+CREATE DATABASE slack_guard_production_queue;
